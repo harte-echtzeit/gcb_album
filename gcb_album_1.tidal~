@@ -1,0 +1,173 @@
+-- 2023-08-17
+-- TRACK 1
+
+-- tiny step sequencer
+d1 $ fast 2
+  $ layer[
+  degradeBy 0.2,
+  echo 4 0.1 0.7,
+  scramble 4,
+  every 2 (rot 4)
+  ]
+  $ n "a4 e2 g3 c3" # s "superhoover . supermandolin"
+  -- # djf rand
+  -- # crush "<2 [3|4]>"
+  -- # smear 0.2
+  # gain "0.9 0.8 0.85"
+  # vowel "<i [o|a|u]>"
+  # room 0.5 # sz 0.2
+  # legato 1
+
+-- dark bleepy beat
+d2 $ fast "<4 2 4>"
+  $ layer [scramble 2,
+           ghost,
+           striate 253,
+           every 3 (rot 3),
+           (# vowel "u o"),
+           (# legato 3)
+          ]
+  $ note "[<1 2 4 5 1> <3 4 3 1>] " |< s "pluck bin casio blip"
+  # krush 3
+  # gain 0.9
+
+ -- WORKSHOP techno beat
+d3 $ layer [(iter' 2), every 2 ((# pan perlin) . chop 128 . (# gain sine))]
+  $ fast 2
+  $ rot (irand 6)
+  -- $ note pat
+  $ note "2 5 3 [1,3]"
+  # s "bd clubkick bass3 [co, sn]"
+  # room 0.5
+  # crush 5
+  # gain 0.9
+
+
+let b = "1 1 1 0 1 1 0 1"
+    b' = inv b
+    
+-- simple but mysterious beat (slow)
+d4 $ struct (b') $ s "oc hh hc jazz" # room 0.7 # sz 0.9
+
+-- nerveous beat and synth line
+d5 $ fast 1.5
+  $ layer[
+         -- off 1.025 (|+ "7"),
+         scramble 7,
+         rot 5
+         ]
+  $ stack[
+  struct (b) $ s "clubkick",
+  struct (b') $ s "blip(3,8)"
+  # gain 1.2,
+  struct (b') $ n "a3'maj7(3,8) d3'maj" # s "superpiano"
+  # speed "0.4 2 1.3 0.2"
+  # gain 1
+  # vowel "a"
+  # lpf 600
+  # legato 0.7]
+
+-- slow beat and synth
+d6 $ sometimes (# vowel "[a|u]")
+  $ layer[sometimes (jux rev . ghost),
+           echo 4 0.1 0.8,
+           iter 7
+         ]
+  $ stack[
+  struct b $ s "bd blip",
+  struct b' $ s "control" # room 0.1 # sz rand # speed "0.3 1.2 0.7" 
+          ]
+  # legato 0.9
+
+hush
+
+-- playground
+d7 $ jux rev
+  $ shuffle 2 $ sound "bd sn oc hh clubkick cpu2 casio bd*2"
+  -- # speed rand*2
+  # room 0.4 # sz 0.1
+  # legato 1
+  -- # smear "0.7 0.4 0.1 0.5"
+  -- # hpf "<1000 600 200 750>"
+
+d1 $ echo 4 0.3 0.8
+  $ every 3 (rev)
+  $ n "0 1 2 4"
+  # s "print stab!2 [sn|808lc]"
+  # delaytime 0.2 # delay 1
+  -- # krush 1
+  # gain 1.4
+
+-- very nervous drumming
+d5 $ every 2 (superimpose ((# speed "-1.9") . (# comb 0.6))) $ slow 0.5 $ s "bd sn [bd clubkick] sn"
+  -- # shape "<0.6 0.7 [0.6|0.1|0.2] 0.8>"
+  # shape rand
+  # delaytime 0.6 # delay 0.8
+  # room 0.5 # sz 0.2
+  # gain 0.6
+  -- # djf "<0.1..0.4>"
+
+-- slow beat
+d3 $ every 2 (jux rev . (# room 0.3) . (# gain 0.7)) $ s "jazz(7,9)" # n (choose [1..7])
+  # pan rand
+  # speed 1.8
+  # vowel "a u o"
+  # djf rand
+  # gain 1.2
+
+
+-- define a pattern for global use
+let pat = "{[a4 a3] h4}. {c4}"
+    -- some ideas for notes
+    -- -> c c h a
+    -- -> c c c cs
+    -- -> c c c h
+    -- -> a a a h
+    -- -> a a a af
+    -- -> a a h c
+    -- -> 1 1 1 2
+    -- -> 1 1 2 3
+    -- pat = "[c4 c4] h4 ~ a4"
+    pat' = -pat 
+
+
+d5 $ sometimes (off 0.125 $ rot 2)
+  $ fast 1.25
+  $ stack[
+  note pat' # "bass3*4",
+  note pat' |<  "bass2(5,7)" # gain "0.99 0.4 0.7",
+  note pat # "sn oc [sn|perc|cpu2] tok" #vowel "a u o",
+  n pat # "[superchip|superpwm] [superhoover|supertron]" # lfo rand # resonance rand # rate 0.5 # pan perlin # gain 0.8
+  # crush 8 # delay 0.2 # lpf 600 # gain 0.8
+  ]
+  -- # room 0.4
+  -- # speed rand*(2)
+  -- # pan perlin
+
+-- realy broken thing
+d1 $ jux rev $ fast 2
+  $ almostAlways (superimpose $ (rot 2). (# room 0.5) . (chop 2) . iter' 4)
+  $ n pat 
+  # stack [s "<bass1 clubkick cpu2>",
+           s "<superhoover supertron supermandolin>"]
+  # vowel "a?u"
+  # gain "<1.2 1.4 1.6 1.4 1.2>"
+  # legato rand
+
+hush
+
+panic
+
+"{[c4 c4] h4}. { a4}" 
+-- brroookkkeenn =)
+
+d2 $ fast 2 $ sometimes ((rot 1) . (# waveloss 76). (# size 0.9))
+  $ n pat
+  # speed "-1.2 1.2"
+  # s "supersquare"
+  # squiz 2
+  # delay rand
+  # freeze rand
+  # gain 1.2
+  -- # legato 1
+ 
