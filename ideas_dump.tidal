@@ -1,0 +1,35 @@
+-- 2023-09-23
+-- DUMP for snippets and ideas
+
+let b = "1 1 1 0 1 1 0 1"
+    b' = inv b
+
+-- nerveous beat and synth line
+d5 $ fast 1.5
+  $ layer[
+         -- off 1.025 (|+ "7"),
+         scramble 7,
+         rot 5
+         ]
+  $ stack[
+  struct (b) $ s "clubkick",
+  struct (b') $ s "blip(3,8)"
+  # gain 1.2,
+  struct (b') $ n "a3'maj7(3,8) d3'maj" # s "superpiano"
+  # speed "0.4 2 1.3 0.2"
+  # gain 1
+  # vowel "a"
+  # lpf 600
+  # legato 0.7]
+
+
+-- very nervous drumming IMPROV
+d5 $ every 2 (superimpose ((# speed "-1.9") . (# comb 0.6))) $ slow 0.5 $ s "bd sn [bd clubkick] sn"
+  -- # shape "<0.6 0.7 [0.6|0.1|0.2] 0.8>"
+  # shape rand
+  # delaytime 0.6 # delay 0.8
+  # room 0.5 # sz 0.2
+  # gain 0.7
+  -- # djf "<0.1..0.4>"
+
+hush

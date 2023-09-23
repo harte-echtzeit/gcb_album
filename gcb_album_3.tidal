@@ -1,0 +1,44 @@
+-- 2023-09-23
+-- TRACK 3
+
+hush
+
+-- tiny step sequencer -> BASE Synth line for the track
+d1 $ fast 2
+  $ layer[
+  degradeBy 0.2,
+  echo 4 0.1 0.7,
+  scramble 4,
+  every 2 (rot 4)
+  ]
+  $ n "a4 e2 g3 c3" # s "superhoover . supermandolin"
+  -- # djf rand
+  -- # crush "<2 [3|4]>"
+  -- # smear 0.2
+  # gain "0.9 0.8 0.85"
+  # vowel "<i [o|a|u]>"
+  # room 0.9 # sz 0.2
+  # legato 1.2
+
+  
+-- BASE beat for the track
+d2 $ jux rev
+  $ shuffle 2 $ sound "bd sn oc hh clubkick cpu2:2 casio bd*2"
+  -- # speed rand*2
+  # room 0.8 # sz 0.6
+  # legato 0.2
+  -- # smear "0.7 0.4 0.1 0.5"
+  -- # hpf "<1000 600 200 750>"
+  # gain 1.2
+
+
+--- needs some stuf to improvize/GLITCH here
+
+-- improve sounds
+d3 $ echo 4 0.3 0.8
+  $ every 3 (rev)
+  $ n "0 1 2 4"
+  # s "print stab!2 [sn|808lc]"
+  # delaytime 0.2 # delay 1
+  -- # krush 1
+  # gain 1.4

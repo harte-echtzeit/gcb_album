@@ -1,0 +1,22 @@
+-- 2023-09-23
+-- TRACK 4
+
+-- define a pattern for global use
+let pat = "{[a4 a3] h4}. {c4}"
+    pat' = -pat 
+
+d1 $ sometimes (off 0.125 $ rot 2)
+  $ fast 1.25
+  $ stack[
+  note pat' # "bass3*4",
+  note pat' |<  "bass2(5,7)" # gain "0.99 0.4 0.7",
+  note pat # "sn oc [sn|perc|cpu2] tok" #vowel "a u o",
+  n pat # "[superchip|superpwm] [superhoover|supertron]" # lfo rand # resonance rand # rate 0.5 # pan perlin # gain 0.8
+  # crush 8 # delay 0.2 # lpf 600 # gain 0.8
+  ]
+  -- # room 0.4
+  -- # speed rand*(2)
+  -- # pan perlin
+
+
+hush
