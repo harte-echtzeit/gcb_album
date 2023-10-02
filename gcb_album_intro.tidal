@@ -1,0 +1,40 @@
+-- 2023-10-02
+-- INTRO
+
+-- the necessary GCB theme =) -> play after some seconds after d2
+d1 $ slow 2
+  $ s "[[gcb gcb:1], [~ gcb:2]]"
+  # speed "<0.99 0.8 0.7 0.6>"
+  -- # lpf (slow 6 $ range 1000 10000 sine)
+  # gain 1
+  # vowel "a u e"
+  -- # fshift 200
+  # room 0.4 # sz 0.9
+
+-- destroyed machine --> play in the begining
+d2 $ jux rev
+  -- $ fast 1.5
+  $ slow "<1..2>"
+  $ sometimes (chop 2 . iter' 4 . rot (irand 4))
+  -- $ n "4 3 7 3 0" >|  s "[print*8, metal(5,8), mp3]"
+  $ n "4 3 7 3 0" >|  s "[print*8, metal(5,8)]"
+  # speed (slow 4 $ range (-1.5) 1.5 sine)
+  # pan (perlin + 0.5)
+  # gain 0.99
+
+
+-- out of noisy and destruction some beat evolves (somehow) -> play in the end
+d3 $ fast 1.5
+  $ sometimes (randslice 4 . rot (irand 4))
+  $ n "1..5"
+  -- # s "[incoming, kick(5,8), space(5,8)]"
+  # s "[incoming, kick(5,8), space(5,8), less(5,8)]"
+  -- # s "[incoming, kick(5,8), space(5,8), less(5,8), flick(3,8)]"
+  -- # s "[incoming, kick(5,8), space(5,8), less(5,8), sid(3,8)]"
+  # speed (slow 3 (range 0.6 1.2 $ tri))
+  # room 0.2 # sz "0.4 0.8"
+  # gain 1
+
+hush
+
+  
