@@ -393,8 +393,8 @@
           <Connection other="Master/audio_in 2"/>
         </Port>
       </IO>
-      <MuteMaster mute-point="PostFader,Listen,Main" muted="0"/>
-      <Controllable name="mute" id="664" flags="Toggle,RealTime" value="0"/>
+      <MuteMaster mute-point="PostFader,Listen,Main" muted="1"/>
+      <Controllable name="mute" id="664" flags="Toggle,RealTime" value="1"/>
       <Controllable name="phase" id="666" flags="Toggle" value="0" phase-invert="0"/>
       <Automation>
         <AutomationList automation-id="solo" id="661" interpolation-style="Discrete" time-domain="AudioTime" state="Off"/>
@@ -485,8 +485,8 @@
           <Connection other="Master/audio_in 2"/>
         </Port>
       </IO>
-      <MuteMaster mute-point="PostFader,Listen,Main" muted="0"/>
-      <Controllable name="mute" id="732" flags="Toggle,RealTime" value="0"/>
+      <MuteMaster mute-point="PostFader,Listen,Main" muted="1"/>
+      <Controllable name="mute" id="732" flags="Toggle,RealTime" value="1"/>
       <Controllable name="phase" id="734" flags="Toggle" value="0" phase-invert="0"/>
       <Automation>
         <AutomationList automation-id="solo" id="729" interpolation-style="Discrete" time-domain="AudioTime" state="Off"/>
@@ -577,8 +577,8 @@
           <Connection other="Master/audio_in 2"/>
         </Port>
       </IO>
-      <MuteMaster mute-point="PostFader,Listen,Main" muted="0"/>
-      <Controllable name="mute" id="816" flags="Toggle,RealTime" value="0"/>
+      <MuteMaster mute-point="PostFader,Listen,Main" muted="1"/>
+      <Controllable name="mute" id="816" flags="Toggle,RealTime" value="1"/>
       <Controllable name="phase" id="818" flags="Toggle" value="0" phase-invert="0"/>
       <Automation>
         <AutomationList automation-id="solo" id="813" interpolation-style="Discrete" time-domain="AudioTime" state="Off"/>
@@ -669,8 +669,8 @@
           <Connection other="Master/audio_in 2"/>
         </Port>
       </IO>
-      <MuteMaster mute-point="PostFader,Listen,Main" muted="0"/>
-      <Controllable name="mute" id="884" flags="Toggle,RealTime" value="0"/>
+      <MuteMaster mute-point="PostFader,Listen,Main" muted="1"/>
+      <Controllable name="mute" id="884" flags="Toggle,RealTime" value="1"/>
       <Controllable name="phase" id="886" flags="Toggle" value="0" phase-invert="0"/>
       <Automation>
         <AutomationList automation-id="solo" id="881" interpolation-style="Discrete" time-domain="AudioTime" state="Off"/>
@@ -748,7 +748,7 @@
       <IO name="Audio 7" id="984" direction="Input" default-type="audio">
         <Port name="Audio 7/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_1"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_7"/>
         </Port>
       </IO>
       <IO name="Audio 7" id="985" direction="Output" default-type="audio">
@@ -828,7 +828,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1000" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1000" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="998" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="996" flags="Toggle,RealTime" value="0"/>
     </Route>
@@ -840,7 +840,7 @@
       <IO name="Audio 8" id="1052" direction="Input" default-type="audio">
         <Port name="Audio 8/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_2"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_8"/>
         </Port>
       </IO>
       <IO name="Audio 8" id="1053" direction="Output" default-type="audio">
@@ -920,7 +920,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1068" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1068" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="1066" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1064" flags="Toggle,RealTime" value="0"/>
     </Route>
@@ -932,7 +932,7 @@
       <IO name="Audio 9" id="1134" direction="Input" default-type="audio">
         <Port name="Audio 9/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_1"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_9"/>
         </Port>
       </IO>
       <IO name="Audio 9" id="1135" direction="Output" default-type="audio">
@@ -1012,7 +1012,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1150" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1150" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="1148" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1146" flags="Toggle,RealTime" value="0"/>
     </Route>
@@ -1024,7 +1024,7 @@
       <IO name="Audio 10" id="1202" direction="Input" default-type="audio">
         <Port name="Audio 10/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_2"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_10"/>
         </Port>
       </IO>
       <IO name="Audio 10" id="1203" direction="Output" default-type="audio">
@@ -1104,7 +1104,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1218" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1218" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="1216" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1214" flags="Toggle,RealTime" value="0"/>
     </Route>
@@ -1116,7 +1116,7 @@
       <IO name="Audio 11" id="1284" direction="Input" default-type="audio">
         <Port name="Audio 11/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_1"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_11"/>
         </Port>
       </IO>
       <IO name="Audio 11" id="1285" direction="Output" default-type="audio">
@@ -1196,7 +1196,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1300" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1300" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="1298" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1296" flags="Toggle,RealTime" value="0"/>
     </Route>
@@ -1208,7 +1208,7 @@
       <IO name="Audio 12" id="1352" direction="Input" default-type="audio">
         <Port name="Audio 12/audio_in 1" type="audio" direction="Input">
           <ExtConnection for="JACK"/>
-          <ExtConnection for="JACK" other="system:capture_2"/>
+          <ExtConnection for="JACK" other="SuperCollider:out_12"/>
         </Port>
       </IO>
       <IO name="Audio 12" id="1353" direction="Output" default-type="audio">
@@ -1288,7 +1288,7 @@
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
       <Slavable/>
-      <Controllable name="monitor" id="1368" flags="RealTime" value="0" monitoring=""/>
+      <Controllable name="monitor" id="1368" flags="RealTime" value="3" monitoring="MonitorInput,MonitorDisk,MonitorCue"/>
       <Controllable name="rec-safe" id="1366" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1364" flags="Toggle,RealTime" value="0"/>
     </Route>
