@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session version="7002" name="gcb_rec_template" sample-rate="48000" session-range-is-free="1" id-counter="2765" rg-counter="0" name-counter="1" event-counter="0" vca-counter="1">
+<Session version="7002" name="gcb_rec_template" sample-rate="48000" session-range-is-free="1" id-counter="4143" rg-counter="0" name-counter="1" event-counter="0" vca-counter="1">
   <ProgramVersion created-with="Ardour 7.5" modified-with="Ardour 8.0"/>
   <MIDIPorts>
     <Port name="Cue Control in" type="midi" direction="Input"/>
@@ -73,8 +73,8 @@
   <TriggerBindings/>
   <Regions/>
   <Selection>
-    <StripableAutomationControl stripable="1239" control="0" order="28"/>
-    <StripableAutomationControl stripable="1307" control="0" order="29"/>
+    <StripableAutomationControl stripable="939" control="0" order="2"/>
+    <StripableAutomationControl stripable="1007" control="0" order="3"/>
   </Selection>
   <Locations/>
   <Bundles/>
@@ -169,7 +169,7 @@
       <Processor id="104" name="meter-Master" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Slavable/>
     </Route>
-    <Route version="7002" id="170" name="Audio 1" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d1" audio-playlist="232" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="170" name="Audio 1" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d1" audio-playlist="232" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="1" flags="AudioTrack,OrderSet,TriggerTrack" color="4289374975"/>
       <Controllable name="solo" id="195" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="201" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -217,6 +217,7 @@
           <AutomationList automation-id="pan-lfe" id="213" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="221" name="meter-Audio 1" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="225" name="recorder:Audio 1" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="224" name="player:Audio 1" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="173" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="0">
@@ -252,7 +253,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="191" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="221" name="meter-Audio 1" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="222" name="Audio 1" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 1" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -261,7 +261,7 @@
       <Controllable name="rec-safe" id="229" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="227" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="244" name="Audio 2" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d1" audio-playlist="306" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="244" name="Audio 2" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d1" audio-playlist="306" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="2" flags="AudioTrack,OrderSet,TriggerTrack" color="3563743999"/>
       <Controllable name="solo" id="269" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="275" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -308,6 +308,7 @@
           <AutomationList automation-id="pan-lfe" id="287" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="295" name="meter-Audio 2" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="299" name="recorder:Audio 2" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="298" name="player:Audio 2" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="247" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="1">
@@ -343,7 +344,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="265" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="295" name="meter-Audio 2" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="296" name="Audio 2" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 2" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -352,7 +352,7 @@
       <Controllable name="rec-safe" id="303" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="301" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="637" name="Audio 3" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d2" audio-playlist="699" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="637" name="Audio 3" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d2" audio-playlist="699" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="3" flags="AudioTrack,OrderSet,TriggerTrack" color="2855877119"/>
       <Controllable name="solo" id="662" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="668" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -398,6 +398,7 @@
           <AutomationList automation-id="pan-lfe" id="680" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="688" name="meter-Audio 3" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="692" name="recorder:Audio 3" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="691" name="player:Audio 3" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="640" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="2">
@@ -433,7 +434,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="658" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="688" name="meter-Audio 3" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="689" name="Audio 3" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 3" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -442,7 +442,7 @@
       <Controllable name="rec-safe" id="696" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="694" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="705" name="Audio 4" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d2" audio-playlist="767" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="705" name="Audio 4" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d2" audio-playlist="767" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="4" flags="AudioTrack,OrderSet,TriggerTrack" color="4289374975"/>
       <Controllable name="solo" id="730" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="736" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -488,6 +488,7 @@
           <AutomationList automation-id="pan-lfe" id="748" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="756" name="meter-Audio 4" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="760" name="recorder:Audio 4" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="759" name="player:Audio 4" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="708" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="3">
@@ -523,7 +524,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="726" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="756" name="meter-Audio 4" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="757" name="Audio 4" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 4" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -532,7 +532,7 @@
       <Controllable name="rec-safe" id="764" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="762" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="789" name="Audio 5" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d3" audio-playlist="851" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="789" name="Audio 5" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d3" audio-playlist="851" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="5" flags="AudioTrack,OrderSet,TriggerTrack" color="3563743999"/>
       <Controllable name="solo" id="814" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="820" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -578,6 +578,7 @@
           <AutomationList automation-id="pan-lfe" id="832" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="840" name="meter-Audio 5" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="844" name="recorder:Audio 5" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="843" name="player:Audio 5" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="792" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="4">
@@ -613,7 +614,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="810" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="840" name="meter-Audio 5" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="841" name="Audio 5" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 5" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -622,7 +622,7 @@
       <Controllable name="rec-safe" id="848" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="846" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="857" name="Audio 6" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d3" audio-playlist="919" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="857" name="Audio 6" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d3" audio-playlist="919" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="6" flags="AudioTrack,OrderSet,TriggerTrack" color="2148865535"/>
       <Controllable name="solo" id="882" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="888" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -668,6 +668,7 @@
           <AutomationList automation-id="pan-lfe" id="900" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="908" name="meter-Audio 6" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="912" name="recorder:Audio 6" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="911" name="player:Audio 6" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="860" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="5">
@@ -703,7 +704,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="878" flags="GainLike" value="1.0000001192092896"/>
       </Processor>
-      <Processor id="908" name="meter-Audio 6" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="909" name="Audio 6" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 6" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -712,7 +712,7 @@
       <Controllable name="rec-safe" id="916" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="914" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="939" name="Audio 7" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d4" audio-playlist="1001" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="939" name="Audio 7" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d4" audio-playlist="1001" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="7" flags="AudioTrack,OrderSet,TriggerTrack" color="1426063615"/>
       <Controllable name="solo" id="964" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="970" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -758,6 +758,7 @@
           <AutomationList automation-id="pan-lfe" id="982" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="990" name="meter-Audio 7" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="994" name="recorder:Audio 7" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="993" name="player:Audio 7" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="942" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="6">
@@ -793,7 +794,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="960" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="990" name="meter-Audio 7" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="991" name="Audio 7" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 7" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -802,7 +802,7 @@
       <Controllable name="rec-safe" id="998" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="996" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="1007" name="Audio 8" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d4" audio-playlist="1069" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="1007" name="Audio 8" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d4" audio-playlist="1069" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="8" flags="AudioTrack,OrderSet,TriggerTrack" color="2861447679"/>
       <Controllable name="solo" id="1032" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1038" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -848,6 +848,7 @@
           <AutomationList automation-id="pan-lfe" id="1050" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="1058" name="meter-Audio 8" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1062" name="recorder:Audio 8" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="1061" name="player:Audio 8" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="1010" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="7">
@@ -883,7 +884,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="1028" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1058" name="meter-Audio 8" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1059" name="Audio 8" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 8" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -892,7 +892,7 @@
       <Controllable name="rec-safe" id="1066" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1064" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="1089" name="Audio 9" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d5" audio-playlist="1151" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="1089" name="Audio 9" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d5" audio-playlist="1151" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="9" flags="AudioTrack,OrderSet,TriggerTrack" color="4293569279"/>
       <Controllable name="solo" id="1114" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1120" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -938,6 +938,7 @@
           <AutomationList automation-id="pan-lfe" id="1132" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="1140" name="meter-Audio 9" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1144" name="recorder:Audio 9" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="1143" name="player:Audio 9" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="1092" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="8">
@@ -971,9 +972,8 @@
         <Automation>
           <AutomationList automation-id="gain" id="1109" interpolation-style="Exponential" time-domain="AudioTime" state="Off"/>
         </Automation>
-        <Controllable name="gaincontrol" id="1110" flags="GainLike" value="1.1230720281600952"/>
+        <Controllable name="gaincontrol" id="1110" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1140" name="meter-Audio 9" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1141" name="Audio 9" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 9" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -982,7 +982,7 @@
       <Controllable name="rec-safe" id="1148" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1146" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="1157" name="Audio 10" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d5" audio-playlist="1219" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="1157" name="Audio 10" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d5" audio-playlist="1219" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="10" flags="AudioTrack,OrderSet,TriggerTrack" color="3568986879"/>
       <Controllable name="solo" id="1182" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1188" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -1028,6 +1028,7 @@
           <AutomationList automation-id="pan-lfe" id="1200" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="1208" name="meter-Audio 10" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1212" name="recorder:Audio 10" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="1211" name="player:Audio 10" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="1160" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="9">
@@ -1061,9 +1062,8 @@
         <Automation>
           <AutomationList automation-id="gain" id="1177" interpolation-style="Exponential" time-domain="AudioTime" state="Off"/>
         </Automation>
-        <Controllable name="gaincontrol" id="1178" flags="GainLike" value="1.1230720281600952"/>
+        <Controllable name="gaincontrol" id="1178" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1208" name="meter-Audio 10" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1209" name="Audio 10" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 10" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -1072,7 +1072,7 @@
       <Controllable name="rec-safe" id="1216" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1214" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="1239" name="Audio 11" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d6" audio-playlist="1301" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="1239" name="Audio 11" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d6" audio-playlist="1301" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="11" flags="AudioTrack,OrderSet,TriggerTrack" color="2154108415"/>
       <Controllable name="solo" id="1264" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1270" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -1118,6 +1118,7 @@
           <AutomationList automation-id="pan-lfe" id="1282" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="1290" name="meter-Audio 11" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1294" name="recorder:Audio 11" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="1293" name="player:Audio 11" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="1242" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="10">
@@ -1153,7 +1154,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="1260" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1290" name="meter-Audio 11" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1291" name="Audio 11" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 11" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
@@ -1162,7 +1162,7 @@
       <Controllable name="rec-safe" id="1298" flags="Toggle,RealTime" value="0"/>
       <Controllable name="rec-enable" id="1296" flags="Toggle,RealTime" value="0"/>
     </Route>
-    <Route version="7002" id="1307" name="Audio 12" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d6" audio-playlist="1369" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
+    <Route version="7002" id="1307" name="Audio 12" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" disk-io-point="DiskIOPreFader" meter-type="MeterPeak" route-group="d6" audio-playlist="1369" saved-meter-point="MeterPostFader" alignment-choice="Automatic" mode="Normal">
       <PresentationInfo order="12" flags="AudioTrack,OrderSet,TriggerTrack" color="1430257919"/>
       <Controllable name="solo" id="1332" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1338" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
@@ -1208,6 +1208,7 @@
           <AutomationList automation-id="pan-lfe" id="1350" interpolation-style="Linear" time-domain="BeatTime" state="Off"/>
         </Automation>
       </Pannable>
+      <Processor id="1358" name="meter-Audio 12" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1362" name="recorder:Audio 12" active="1" user-latency="0" use-user-latency="0" type="diskwriter" record-safe="0"/>
       <Processor id="1361" name="player:Audio 12" active="1" user-latency="0" use-user-latency="0" type="diskreader"/>
       <Processor id="1310" name="TriggerBox" active="1" user-latency="0" use-user-latency="0" type="triggerbox" data-type="audio" order="11">
@@ -1243,7 +1244,6 @@
         </Automation>
         <Controllable name="gaincontrol" id="1328" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1358" name="meter-Audio 12" active="1" user-latency="0" use-user-latency="0" type="meter"/>
       <Processor id="1359" name="Audio 12" active="1" user-latency="0" use-user-latency="0" own-input="1" own-output="0" output="Audio 12" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
       </Processor>
