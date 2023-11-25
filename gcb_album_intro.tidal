@@ -6,7 +6,7 @@ d1 $ slow 2
   $ s "[[gcb gcb:1], [~ gcb:2]]"
   # speed "<0.99 0.8 0.7 0.6>"
   -- # lpf (slow 6 $ range 1000 10000 sine)
-  # gain 1
+  # gain 1.2
   # vowel "a u e"
   -- # fshift 200
   # room 0.4 # sz 0.9

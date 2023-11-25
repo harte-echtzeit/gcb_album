@@ -5,21 +5,52 @@
 let pat = "{[a4 a3] h4}. {c4}"
     pat' = -pat 
 
+-- dramaturgie zum improvisieren von d1 finden und ablauf d2 (variation über den Track)
+
 -- INTRO
 -- slow beat
-d1 $ every 2 (jux rev . (# room 0.3) . (# gain 0.7)) $ s "jazz(7,9)" # n (choose [1..7])
+d1 -- $ every 2 (jux rev . (# room 0.7) . (# gain 0.97) . (# s "space"))
+  -- $ every 2 (jux rev . (# room 0.7) . (# gain 0.97) . (# s "toys"))
+  -- $ every 2 (jux rev . (# room 0.7) . (# gain 0.97) . (# s "invaders"))
+  -- $ every 2 (jux rev . (# room 0.7) . (# gain 0.97) . (# s "birds"))
+  $ s "jazz(7,9)"
+  # n (choose [1..7])
   # pan rand
-  # speed 1.8
+  # speed (range 1.5 1.8 $ sine2)
   # vowel "a u o"
   -- # djf rand
   # gain 2.8
 
+d2 -- $ degradeBy 0.2
+  $ every 6 (scramble 2)
+  -- $ s "[cpu2:0(5,9), cpu2:15(7,9,<2 1>), cp(5,9), [808sd:1(3,9)|sd(3,9)]]"
+  -- $ s "[cpu2:0(5,9), cpu2:14*9, cp(5,9), [808sd:1(3,9)|sd(3,9)]]"
+  -- $ s "[cpu2:0(5,9), cpu2:12*9, cp(5,9), [808sd:1(3,9)|sd(3,9)]]"
+  -- $ s "[cpu2:0(5,9), oc(7,9), cp(5,9), [808sd:1(3,9)|sd(3,9)]]"
+  $ s "[cpu2:0(5,9), hc(7,9,<2 1>), cp(5,9), [808sd:1(3,9)|sd(3,9)]]"
+
+  
+d3 $ s "clubkick(7,9)"
+  # gain 1
+  # room 0.7
+  # djf rand 
+
+--- schöne bass linie schreiben!
+d4 $ fast 1
+  $ n "a4 a4 c4 a4 a4 c4 h4 h4 c4" + up 7 # s "bass3"
+  -- # speed (range 1 1.2 $ tri)
+  # gain 1.2
+
+
+
+
+-- raus !  
 
 d2 $ sometimes (off 0.125 $ rot 2)
   $ fast 1.25
   $ stack[
   note pat' # "bass3*4",
-  note pat' |<  "bass2(5,7)" # gain "0.99 0.4 0.7",
+  note pat' |<  "bass2(5,8)" # gain "0.99 0.4 0.7",
   note pat # "sn oc [sn|perc|cpu2] tok" #vowel "a u o",
   n pat # "[superchip|superpwm] [superhoover|supertron]" # lfo rand # resonance rand # rate 0.5 # pan perlin # gain 0.8
   # crush 8 # delay 0.2 # lpf 600 # gain 0.8
